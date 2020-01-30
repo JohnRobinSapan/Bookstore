@@ -34,6 +34,8 @@ namespace Bookstore
 			app.UseStaticFiles();
 			//app.UseMvcWithDefaultRoute();
 
+            //Running in MacOS
+
 			app.UseEndpoints(endpoints => endpoints.MapControllerRoute("default", "{controller=Book}/{action=List}/{id?}"));
 
 			//SeedData.EnsurePopulated(app);
