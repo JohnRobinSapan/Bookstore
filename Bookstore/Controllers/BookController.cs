@@ -11,15 +11,23 @@ namespace Bookstore.Controllers
 	{
 
 		private IBookRepository repo;
-
-		public BookController (IBookRepository repo)
+		private int PageSize = 4;
+		public BookController(IBookRepository repo)
 		{
 			this.repo = repo;
 		}
 
-		public ViewResult List()
+		//public ViewResult List()
+		//{
+		//	return View(repo.Books);
+		//}
+
+		public ViewResult List(int page = 1)
 		{
-			return View(repo.Books);
+			return View(repo.Books
+				.OrderBy(p => p.BookID)
+				.Skip((page - 1) * PageSize)
+				.Take(PageSize));
 		}
 	}
 }
