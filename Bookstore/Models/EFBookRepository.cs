@@ -5,17 +5,16 @@ using System.Threading.Tasks;
 
 namespace Bookstore.Models
 {
-	public class EFBookRepository : IBookRepository
-	{
-		private ApplicationDbContext context;
+    public class EFBookRepository : IBookRepository
+    {
+        private ApplicationDbContext context;
 
-		public EFBookRepository(ApplicationDbContext context)
-		{
-			this.context = context;
-		}
+        public EFBookRepository(ApplicationDbContext context)
+        {
+            this.context = context;
+        }
 
-		public IQueryable<Book> Books => context.Books;
+        public IQueryable<Book> Books => context.Books;
 
-	
-	}
+    }
 }
