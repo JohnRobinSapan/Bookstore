@@ -34,7 +34,7 @@ namespace Bookstore
 		{
 		services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["ConnectionString:BookstoreConnectionStr"]));
 		services.AddTransient<IBookRepository, EFBookRepository>();
-		services.AddTransient<IBookRepository, FakeBookRepository>();
+		//services.AddTransient<IBookRepository, FakeBookRepository>();
 			services.AddMvc();
 		}
 
